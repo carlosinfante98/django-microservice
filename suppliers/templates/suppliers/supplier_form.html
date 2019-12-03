@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block createsupplier %}
+<div class="text-center">
+    <h1>Agregar Proveedor</h1>
+    <form method="POST">{% csrf_token %} {{ form.as_p }}
+        <!-- <input type="submit" value="Submit" /> -->
+        <button onclick="window.location='/suppliers'" type="button submit" class="btn btn-success">Agregar</button>
+    </form>
+</div>
+{% endblock %}

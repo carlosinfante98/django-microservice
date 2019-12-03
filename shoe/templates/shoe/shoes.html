@@ -1,0 +1,42 @@
+{% extends 'base.html' %} {% block content %} {% if user.is_authenticated and user.username == 'gerente' or user.username == 'admin' %}
+<div class="row">
+    <div class="col-xs-6 ml-4 my-3">
+        <h2>Zapatos</h2>
+    </div>
+    <div class="col-xs-6 mx-4 my-3">
+        <a href="/shoes/new">
+            <button type="button" class="btn btn-info">Crear Zapato</button>
+        </a>
+    </div>
+</div>
+{% else %}
+<h2>Zapatos</h2>
+{% endif %}
+
+<table class="table" style="margin-top: 2vh;">
+    <thead class="thead-dark text-center">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Color</th>
+            <th scope="col">Tamaño</th>
+            <th scope="col">Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for shoe in shoes_list %}
+        <tr class="text-center">
+            <th scope="row">{{shoe.pk}}</th>
+            <td>{{shoe.name}}</td>
+            <td>$ {{shoe.price}}</td>
+            <td>{{shoe.type}}</td>
+            <td>{{shoe.color}}</td>
+            <td>{{shoe.height}}</td>
+            <td>{{shoe.description}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

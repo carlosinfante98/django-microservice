@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block createshoe %}
+<div class="text-center">
+    <h2 class="mt-4">Crear Zapato</h2>
+    <form method="POST">{% csrf_token %} {{ form.as_p }}
+        <!-- <input type="submit" value="Submit" /> -->
+        <button type="button submit" class="btn btn-success">Crear</button>
+    </form>
+</div>
+
+{% endblock %}

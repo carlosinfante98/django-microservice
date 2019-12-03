@@ -1,0 +1,39 @@
+<h1>Shoe Instances </h1>
+
+<table border="1">
+<thead>
+    <tr>
+    <th>Name</th>
+    <th>Size Country</th>
+    <th>Size</th>
+    <th>Publication Date</th>
+    <th>Price</th>
+    <th>US_Size</th>
+    <th>EU_Size</th>
+    <th>status</th>
+    
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for shoeI in shoeI_list %}
+    <tr>
+    <td>{{ shoeI.shoe.name }}</td>
+    <td>{{ shoeI.shoe.size_country }}</td>
+    <td>{{ shoeI.shoe.size }}</td>
+    <td>{{ shoeI.shoe.publication_date }}</td>
+    <td>{{ shoeI.shoe.price }}</td>
+    <td>{{ shoeI.USSize }}</td>
+    <td>{{ shoeI.EUSize }}</td>
+    <td>{{ shoeI.status }}</td>
+    <td><a href="{% url "shoeI_view" shoe.id %}">view</a></td>
+    <td><a href="{% url "shoeI_edit" shoe.id %}">edit</a></td>
+    <td><a href="{% url "shoeI_delete" shoe.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "shoeI_new" %}">New</a>
