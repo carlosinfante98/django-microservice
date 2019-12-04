@@ -151,7 +151,7 @@ STATICFILES_DIRS = [
 #Esta es la parte que se usa para poder implementar auth0
 LOGIN_URL = "/login/auth0"
 LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "https://isis2503-carlosinfante98.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:8000"
+LOGOUT_REDIRECT_URL = "https://isis2503-carlosinfante98.auth0.com/v2/logout?returnTo=http%3A%2F%2Flocalhost:9000"
 
 SOCIAL_AUTH_TRAILING_SLASH = False  # Remove end slash from routes
 SOCIAL_AUTH_AUTH0_DOMAIN = 'isis2503-carlosinfante98.auth0.com'
@@ -166,3 +166,5 @@ AUTHENTICATION_BACKENDS = {
     'antusu_experimento1.auth0backend.Auth0',
     'django.contrib.auth.backends.ModelBackend',
 }
+
+PATH_VAR = "http://0.0.0.0:8000/shoes/suppliershoes"

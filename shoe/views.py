@@ -10,6 +10,7 @@ from django.template import loader
 from shoe.models import Shoe
 from .forms import ShoeForm
 from .logic.logic_shoe import get_shoes, create_shoe
+import json
 # Create your views here.
 
 
@@ -24,6 +25,14 @@ def shoe_list(request):
         'shoes_list': shoes
     }
     return render(request, 'shoe/shoes.html', context)
+
+def supplier_shoes(data):
+    r = requests.get(settings.PATH_VAR, headers={"Accept":"application/json"})
+    shoes = r.json()
+    for shoe in shoes:
+        if data["variable"] == variable["id"]:
+            return True
+    return False
 
 def shoe_create(request):
     if request.method == 'POST':

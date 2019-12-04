@@ -12,47 +12,24 @@
 {% else %}
 <h2>Proveedores</h2>
 {% endif %}
-<!-- <table class="table" style="margin-top: 2vh;">
-    <thead class="thead-dark text-center">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Email</th>
-            <th scope="col">Teléfono</th>
-            <th scope="col">NIT</th>
-            <th scope="col">Ciudad</th>
-            <th scope="col">Dirección</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for s in supplier_list %}
-        <tr class="text-center">
-            <th scope="row">{{s.pk}}</th>
-            <td>{{s.name}}</td>
-            <td>{{s.email}}</td>
-            <td>{{s.phone}}</td>
-            <td>{{s.nit}}</td>
-            <td>{{s.city}}</td>
-            <td>{{s.address}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table> -->
+
 {% for s in supplier_list %}
-<div class="my-3" style="display:inline-block;">
-    <div class="card mx-3" style="width: 18rem; display:inline-block;">
-        <img src="../../../static/media/supplier.png" style="width: 20vh; margin: 1em 25%;" class="card-img-top" alt="Supplier">
-        <div class="card-body text-center">
-            <h5 class="card-title">Proveedor {{s.pk}}</h5>
-            <h5 class="card-title">Nombre: {{s.name}}</h5>
+<a href="/suppliers/{{s.pk}}" style="color:black">
+    <div class="my-3" style="display:inline-block; cursor: pointer">
+        <div class="card mx-3" style="width: 18rem; display:inline-block;">
+            <img src="../../../static/media/supplier.png" style="width: 20vh; margin: 1em 25%;" class="card-img-top" alt="Supplier">
+            <div class="card-body text-center">
+                <h5 class="card-title">Proveedor {{s.pk}}</h5>
+                <h5 class="card-title">Nombre: {{s.name}}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><b>Email: </b> {{s.email}}</li>
+                <li class="list-group-item"><b>Teléfono: </b> {{s.phone}}</li>
+                <li class="list-group-item"><b>NIT: </b> {{s.nit}}</li>
+                <li class="list-group-item"><b>Ciudad: </b> {{s.city}}</li>
+                <li class="list-group-item"><b>Dirección: </b> {{s.address}}</li>
+            </ul>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Email: </b> {{s.email}}</li>
-            <li class="list-group-item"><b>Teléfono: </b> {{s.phone}}</li>
-            <li class="list-group-item"><b>NIT: </b> {{s.nit}}</li>
-            <li class="list-group-item"><b>Ciudad: </b> {{s.city}}</li>
-            <li class="list-group-item"><b>Dirección: </b> {{s.address}}</li>
-        </ul>
     </div>
-</div>
+</a>
 {% endfor %} {% endblock %}
