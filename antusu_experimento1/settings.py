@@ -167,4 +167,4 @@ AUTHENTICATION_BACKENDS = {
     'django.contrib.auth.backends.ModelBackend',
 }
 
-PATH_VAR = "http://190.156.105.172:8000/shoes/suppliershoes"
+PATH_VAR = "http://192.168.0.9:8000/shoes/suppliershoes"
